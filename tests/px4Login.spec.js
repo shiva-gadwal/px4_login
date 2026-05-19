@@ -126,6 +126,7 @@ test('Final Successful Login', async () => {
     await verify.submit();
 
     await company.select();
+    await verify.closeButton();
     await expect(page).toHaveURL(/resources/);
 });
 

@@ -12,7 +12,9 @@ export class CompanyPage {
     }
 
     async logout() {
+        await this.topRightMenu.waitFor({ state: 'visible' });
         await this.topRightMenu.click();
+        await this.logoutBtn.waitFor({ state: 'visible' });
         await this.logoutBtn.click();
     }
 }

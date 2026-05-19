@@ -6,6 +6,7 @@ export class VerificationPage {
         this.submitBtn = page.locator('input[value="Submit"]');
         this.resendCode = page.getByText("Resend code");
         this.resendMsg = page.getByText('Verification code has been sent to your email.');
+        this.closebutton=page.locator("//div[@class='custom-close']");
     }
 
     async enterCode(code) {
@@ -18,5 +19,9 @@ export class VerificationPage {
 
     async resend() {
         await this.resendCode.click();
+    }
+
+     async closeButton(){
+        await this.closebutton.click();
     }
 }
